@@ -1,0 +1,192 @@
+:root {
+  --primary: #38bdf8;
+  --bg-dark: #0f172a;
+  --bg-light: rgba(255, 255, 255, 0.05);
+  --text: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0f172a, #1e293b);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+header {
+  background: var(--bg-dark);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+header h1 {
+  color: var(--primary);
+  font-size: 24px;
+}
+
+nav a {
+  color: var(--text);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: var(--primary);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--primary);
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+.hero p {
+  max-width: 600px;
+  margin-top: 15px;
+  font-size: 1.1rem;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out 3s forwards;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+section {
+  padding: 60px 40px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+    gap: 20px;
+  }
+  
+
+.card {
+  background: var(--glass);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+.card h3 {
+    color: #38bdf8; /* Tumhare current blue color */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+a.button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: var(--bg-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+
+a.button:hover {
+  background: #0ea5e9;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  background: var(--bg-light);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+form button {
+  background: var(--primary);
+  border: none;
+  padding: 12px;
+  color: var(--bg-dark);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #0ea5e9;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: var(--bg-dark);
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+    }
+  }
+  
